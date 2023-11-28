@@ -1,11 +1,16 @@
+// app/javascript/packs/application.js
+
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import App from './components/App';
 
-function App() {
-  return (<h1>Hello World!</h1>);
-}
-
-ReactDOM.render(
-  <App/>,
-  document.getElementById('root'),
-);
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('root')
+  );
+});
